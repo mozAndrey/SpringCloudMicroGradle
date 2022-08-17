@@ -3,8 +3,10 @@ package example.mapper;
 import example.dto.BillRequestDto;
 import example.entity.Bill;
 import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
-@Mapper
+@Mapper(componentModel = "spring")
+@Component
 public interface BillRequestDtoMapper {
     BillRequestDto toDto(Bill bill);
 
