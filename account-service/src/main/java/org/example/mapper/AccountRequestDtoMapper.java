@@ -1,14 +1,31 @@
 package org.example.mapper;
 
 import org.example.dto.AccountRequestDto;
-import org.example.dto.AccountResponseDto;
 import org.example.entity.Account;
-import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
 @Component
-public interface AccountRequestDtoMapper {
+public class AccountRequestDtoMapper {
 
-    Account toModel(AccountRequestDto requestDto);
+    public AccountRequestDto toDto(Account account) {
+        return AccountRequestDto.builder()
+                .accountId(account.getAccountId())
+                .bills(account.getBills())
+                .creationDate(account.getCreationDate())
+                .email(account.getEmail())
+                .name(account.getName())
+                .phone(account.getPhone())
+                .build();
+    }
+
+    public Account toModel(AccountRequestDto accountRequestDto) {
+        return Account.builder()
+                .accountId(accountRequestDto.getAccountId())
+                .bills(accountRequestDto.getBills())
+                .creationDate(accountRequestDto.getCreationDate())
+                .email(accountRequestDto.getEmail())
+                .name(accountRequestDto.getName())
+                .phone(accountRequestDto.getPhone())
+                .build();
+    }
 }

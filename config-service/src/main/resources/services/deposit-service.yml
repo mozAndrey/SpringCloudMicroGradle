@@ -7,9 +7,9 @@ spring:
     properties:
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/deposit_service_database
+    url: jdbc:postgresql://localhost:5433/deposit_service_database
     username: postgres
-    password: postgres
+    password: postqres
     driver-class-name: org.postgresql.Driver
   rabbitmq:
     port: 5672

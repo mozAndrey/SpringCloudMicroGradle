@@ -40,5 +40,6 @@ dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
     implementation "org.postgresql:postgresql:42.2.5"
     implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.4.2.Final'
+    implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.4.2.Final'
     testImplementation "junit:junit:4.1"
 }

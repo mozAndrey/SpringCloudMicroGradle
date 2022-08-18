@@ -6,15 +6,22 @@ import org.example.dto.AccountResponseDto;
 import org.example.mapper.AccountRequestDtoMapper;
 import org.example.mapper.AccountResponseDtoMapper;
 import org.example.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor
 public class AccountController {
 
     private final AccountService accountService;
     private final AccountRequestDtoMapper accountRequestDtoMapper;
     private final AccountResponseDtoMapper accountResponseDtoMapper;
+
+    @Autowired
+    public AccountController(AccountService accountService, AccountRequestDtoMapper accountRequestDtoMapper, AccountResponseDtoMapper accountResponseDtoMapper) {
+        this.accountService = accountService;
+        this.accountRequestDtoMapper = accountRequestDtoMapper;
+        this.accountResponseDtoMapper = accountResponseDtoMapper;
+    }
 
     @GetMapping("/{accountId}")
     public AccountResponseDto getAccount(@PathVariable Long accountId) {

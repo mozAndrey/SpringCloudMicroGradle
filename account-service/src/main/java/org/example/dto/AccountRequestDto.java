@@ -5,8 +5,10 @@ import lombok.*;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+@Builder
 @Getter
-@NoArgsConstructor
+@Setter
+@AllArgsConstructor
 public class AccountRequestDto {
     private Long accountId;
     private String name;
