@@ -22,7 +22,6 @@ public class AccountRequestDtoMapper {
         return Account.builder()
                 .accountId(accountRequestDto.getAccountId())
                 .bills(accountRequestDto.getBills())
-                .creationDate(accountRequestDto.getCreationDate())
                 .email(accountRequestDto.getEmail())
                 .name(accountRequestDto.getName())
                 .phone(accountRequestDto.getPhone())

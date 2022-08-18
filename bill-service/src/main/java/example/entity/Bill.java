@@ -13,7 +13,6 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Builder
 public class Bill {
@@ -24,6 +23,10 @@ public class Bill {
     private Long accountId;
     private BigDecimal amount;
     private Boolean isDefault;
-    private OffsetDateTime creationDate;
+    private final OffsetDateTime creationDate;
     private Boolean overdraftEnabled;
+
+    public Bill() {
+        creationDate = OffsetDateTime.now();
+    }
 }

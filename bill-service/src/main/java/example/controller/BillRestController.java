@@ -18,7 +18,7 @@ public class BillRestController {
     private final BillRequestDtoMapper billRequestDtoMapper;
 
     @GetMapping("/{billId}")
-    public BillResponseDto getBill(Long billId) {
+    public BillResponseDto getBill(@PathVariable Long billId) {
         return billResponseDtoMapper.toDto(billService.getBillById(billId));
     }
 

@@ -10,7 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Builder
 public class Account {
@@ -20,7 +19,11 @@ public class Account {
     private String name;
     private String email;
     private String phone;
-    private OffsetDateTime creationDate;
+    private final OffsetDateTime creationDate;
     @ElementCollection
     private List<Long> bills;
+
+    public Account() {
+        creationDate = OffsetDateTime.now();
+    }
 }

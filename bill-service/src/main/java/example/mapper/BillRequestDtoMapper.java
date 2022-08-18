@@ -4,6 +4,8 @@ import example.dto.BillRequestDto;
 import example.entity.Bill;
 import org.springframework.stereotype.Component;
 
+import java.time.OffsetDateTime;
+
 @Component
 public class BillRequestDtoMapper {
     public BillRequestDto toDto(Bill bill) {
@@ -19,7 +21,7 @@ public class BillRequestDtoMapper {
     public Bill toModel(BillRequestDto billRequestDto) {
         return Bill.builder()
                 .accountId(billRequestDto.getAccountId())
-                .creationDate(billRequestDto.getCreationDate())
+                .creationDate(OffsetDateTime.now())
                 .amount(billRequestDto.getAmount())
                 .isDefault(billRequestDto.getIsDefault())
                 .overdraftEnabled(billRequestDto.getOverdraftEnabled())

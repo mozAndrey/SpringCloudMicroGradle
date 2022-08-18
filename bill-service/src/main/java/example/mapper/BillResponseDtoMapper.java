@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class BillResponseDtoMapper {
     public BillResponseDto toDto(Bill bill) {
         return BillResponseDto.builder()
+                .id(bill.getId())
                 .accountId(bill.getAccountId())
                 .creationDate(bill.getCreationDate())
                 .amount(bill.getAmount())
