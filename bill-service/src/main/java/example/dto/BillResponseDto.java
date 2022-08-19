@@ -1,9 +1,6 @@
 package example.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -12,6 +9,7 @@ import java.time.OffsetDateTime;
 @Setter
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class BillResponseDto {
     private Long id;
     private Long accountId;

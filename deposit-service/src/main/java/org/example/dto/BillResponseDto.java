@@ -1,4 +1,4 @@
-package example.dto;
+package org.example.dto;
 
 import lombok.*;
 
@@ -10,7 +10,8 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class BillRequestDto {
+public class BillResponseDto {
+    private Long id;
     private Long accountId;
     private BigDecimal amount;
     private Boolean isDefault;

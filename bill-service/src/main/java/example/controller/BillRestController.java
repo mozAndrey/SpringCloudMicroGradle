@@ -9,6 +9,9 @@ import example.service.BillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequiredArgsConstructor
 public class BillRestController {
@@ -37,5 +40,13 @@ public class BillRestController {
     @DeleteMapping("/{billId}")
     public BillResponseDto deleteBill(@PathVariable Long billId) {
         return billResponseDtoMapper.toDto(billService.deleteBill(billId));
+    }
+
+    @GetMapping("/account/{accountId}")
+    public List<BillResponseDto> getBillsByAccountId (@PathVariable Long accountId) {
+        return billService.getBillsByAccountId(accountId)
+                .stream()
+                .map(billResponseDtoMapper::toDto)
+                .collect(Collectors.toList());
     }
 }

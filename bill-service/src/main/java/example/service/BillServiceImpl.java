@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -47,6 +48,12 @@ public class BillServiceImpl implements BillService {
         Bill billByIdToDelete = getBillById(id);
         billRepository.deleteById(id);
         return billByIdToDelete;
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Bill> getBillsByAccountId(Long accountId) {
+        return billRepository.getBillsByAccountId(accountId);
     }
 
 }
