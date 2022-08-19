@@ -35,7 +35,7 @@ public class DepositService {
         if (accountId == null && billId == null) {
             throw new DepositServiceException("Account is null and Bill is null");
         }
-        if (billId == null) {
+        if (billId != null) {
             BillResponseDto billResponseDto = billServiceClient.getBillById(billId);
             BillRequestDto billRequestDto = createBillRequest(amount, billResponseDto);
             billServiceClient.updateBill(billId, billRequestDto);

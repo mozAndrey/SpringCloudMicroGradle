@@ -15,7 +15,7 @@ public interface BillServiceClient {
     @RequestMapping(value = "/bills/{billId}", method = RequestMethod.GET)
     BillResponseDto getBillById(@PathVariable Long billId);
 
-    @RequestMapping("/bills/{billId}")
+    @RequestMapping(value = "/bills/{billId}", method = RequestMethod.PUT)
     void updateBill(@PathVariable Long billId, BillRequestDto billRequestDto);
 
     @RequestMapping(value = "/bills/account/{accountId}", method = RequestMethod.GET)
